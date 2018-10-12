@@ -1,8 +1,10 @@
 require 'menu'
 
 describe Menu do
-    subject(:menu) { described_class.new }
-    it 'checks for menu prices' do
-        expect(menu).to respond_to(:check).with(1).argument
+    describe '#check_menu' do
+      subject(:menu) { described_class.new }
+      it 'checks menu for dishes and prices' do
+        expect(menu.check_menu).to eq("Burger" => 2)
+      end
     end
 end
